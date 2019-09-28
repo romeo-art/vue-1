@@ -10,5 +10,6 @@
     background-image: url(http://www.sclance.com/backgrounds/key-background/key-background_1376694.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    width: auto;
     } 
 </style>
