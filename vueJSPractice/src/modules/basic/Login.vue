@@ -35,7 +35,7 @@
             </b-form-checkbox-group>
           </b-form-group>
 
-          <center><b-button type="submit" class="btn btn-outline-primary" variant="primary">LogIn</b-button></center>
+          <center><b-button type="submit" class="btn btn-outline-primary" variant="primary" v-on:click = "redirect("/dashboard")">LogIn</b-button></center>
         </b-form>
       </b-card>
 
@@ -58,11 +58,11 @@ export default {
       show: true
     };
   },
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      console.log(JSON.stringify(this.form));
-    }
-  }
+  // methods: {
+  //   onSubmit(evt) {
+  //     evt.preventDefault();
+  //     console.log(JSON.stringify(this.form));
+  //   }
+  // }
 };
 </script>

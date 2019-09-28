@@ -1,7 +1,7 @@
 <template>
 <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#" id="title">InDesign Secrets</b-navbar-brand>
+    <b-navbar-brand href="#" id="title">MYAPP</b-navbar-brand>
     
     <v-spacer></v-spacer>
     

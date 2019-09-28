@@ -3,7 +3,7 @@ export default{
         {
         path : '/login',
         name: 'login',
-        component : resolve =>require(['../modules/basic/Login.vue'], resolve),
+        component : resolve =>require(['modules/basic/Login.vue'], resolve),
         meta : {
             tokenRequired : false
         }
@@ -11,7 +11,7 @@ export default{
     {
         path : '/register',
         name : 'register',
-        component : resolve => require(['../modules/basic/Register.vue'], resolve),
+        component : resolve => require(['modules/basic/Register.vue'], resolve),
         meta : {
             tokenRequired : false
         }

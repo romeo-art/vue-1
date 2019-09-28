@@ -1,8 +1,10 @@
  /* eslint-disable */
 // import AUTHO from '../services/auth'
 let beforeEnter = (to, from, next) => {
-next()
+    next()
+    
 }
+
 var devRoutes = []
 let app = require('./app.js')
 devRoutes = devRoutes.concat(app.default.routes) 

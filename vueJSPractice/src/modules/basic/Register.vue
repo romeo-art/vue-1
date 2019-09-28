@@ -60,7 +60,7 @@
               ></b-form-input>
             </b-form-group>
 
-            <center><b-button type="submit" variant="primary">Submit</b-button></center>
+            <center><b-button v-model="dataRegister" type="submit" variant="primary">Submit</b-button></center>
           </b-form>
         </b-card>
       </b-col>
@@ -71,6 +71,8 @@
 </template>
 <script>
 export default {
+  el: ".bv-example-row",
+
   data() {
     return {
       form: {
@@ -81,13 +83,7 @@ export default {
         confirmedPassword: "",
       },
       show: true
-    };
+    }
   },
-  // methods: {
-  //   onSubmit(evt) {
-  //     evt.preventDefault();
-  //     console.log(JSON.stringify(this.form));
-  //   }
-  // }
-};
+}
 </script>
