@@ -1,68 +1,54 @@
 <template>
+<div class="login">
 
-  <b-container class="bv-example-row">
-    <b-row>
-      <b-col></b-col>
-      <b-card id="login"
-        title="LogIn"
-        style="margin-top:10%"
-      >
-      <br>
-        <b-form @submit="onSubmit" v-if="show">
-          <b-form-group id="emailAdd" description="We'll never share your email with anyone else.">
-            <b-form-input
-              id="userName"
-              v-model="form.email"
-              type="email"
-              required
-              placeholder="Enter email"
-            ></b-form-input>
-          </b-form-group>
+<form id="formLogin">
+<h2 class="text-center">Login</h2><br>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input v-model="email" type="email" class="form-control" id="email" placeholder="Email">
+  </div>
 
-          <b-form-group id="userPassword">
-            <b-form-input
-              id="password"
-              v-model="form.name"
-              type="password"
-              required
-              placeholder="Password"
-            ></b-form-input>
-          </b-form-group>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input v-model="password" type="password" class="form-control" id="password" placeholder="Password">
+  </div>
 
-          <b-form-group id="rememberPassword">
-            <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-              <b-form-checkbox value="me">Remember password?</b-form-checkbox>
-            </b-form-checkbox-group>
-          </b-form-group>
+  <center><button type="submit" class="btn btn-primary" @click="submit">Login</button></center>
+</form>
 
-          <center><b-button type="submit" class="btn btn-outline-primary" variant="primary" v-on:click = "redirect("/dashboard")">LogIn</b-button></center>
-        </b-form>
-      </b-card>
-
-      <b-col></b-col>
-    </b-row>
-  </b-container>
+</div>
 </template>
-
+<style scoped>
+  .login{
+    width: 305px;
+    border: solid gray 2px;
+    margin-left: 38%;
+    margin-top: 150px;
+  }
+</style>
 <script>
-//eslint-disable-next-line
-/*eslint-disable*/
+import AUTH from 'services/auth'
 export default {
+  auth: AUTH,
   data() {
     return {
-      form: {
         email: "",
-        name: "",
-        checked: []
-      },
-      show: true
+        password: ""
     };
   },
+  methods: {
+    submit: function (e) {
+        e.preventDefault();
+        AUTH.login(this.email, this.password)
+    },
+  }
+};
+
   // methods: {
   //   onSubmit(evt) {
   //     evt.preventDefault();
   //     console.log(JSON.stringify(this.form));
   //   }
   // }
-};
+
 </script>

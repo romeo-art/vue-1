@@ -1,88 +1,56 @@
 <template>
-  <b-container class="bv-example-row">
-    <b-row>
-      <b-col></b-col>
-      <b-col lg>
-        <b-card
-          title="SIGN UP"
-          style="margin-top:30%"
-        >
-        <br>
-          <b-form @submit="onSubmit" v-if="show">
+<div class="register">
 
-            <b-form-group id="lastName">
-              <b-form-input
-                id="userLastName"
-                v-model="form.userLastName"
-                type="text"
-                required
-                placeholder="LastName"
-              ></b-form-input>
-            </b-form-group>
+<form id="formRegister">
+<h2 class="text-center">Register</h2><br>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input v-model="username" type="text" class="form-control" id="username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input v-model="email" type="email" class="form-control" id="email" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input v-model="password" type="password" class="form-control" id="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Confirm Password</label>
+    <input v-model="confirmedPassword" type="password" class="form-control" id="conPassword" placeholder="Repeat Password">
+  </div>
+  <center><button class="btn btn-primary" @click="submit">Submit</button></center>
+</form>
 
-            <b-form-group id="firstName">
-              <b-form-input
-                id="userFirstName"
-                v-model="form.userFirstName"
-                type="text"
-                required
-                placeholder="FirstName"
-              ></b-form-input>
-            </b-form-group>
-
-            <b-form-group id="emailAdd">
-              <b-form-input
-                id="userEmail"
-                v-model="form.userEmail"
-                type="email"
-                required
-                placeholder="Enter email"
-              ></b-form-input>
-            </b-form-group>
-
-            <b-form-group id="initialUserPassword">
-              <b-form-input
-                id="initialPassword"
-                v-model="form.initialPassword"
-                type="password"
-                required
-                placeholder="Password"
-              ></b-form-input>
-            </b-form-group>
-
-            <b-form-group id="confirmUserPassword">
-              <b-form-input
-                id="confirmedPassword"
-                v-model="form.confirmedPassword"
-                type="password"
-                required
-                placeholder="Confirm Password"
-              ></b-form-input>
-            </b-form-group>
-
-            <center><b-button v-model="dataRegister" type="submit" variant="primary">Submit</b-button></center>
-          </b-form>
-        </b-card>
-      </b-col>
-
-      <b-col></b-col>
-    </b-row>
-  </b-container>
+</div>
 </template>
+<style scoped>
+  .register{
+    width: 305px;
+    border: solid gray 2px;
+    margin-left: 38%;
+    margin-top: 150px;
+  }
+</style>
 <script>
+import AUTH from 'services/auth'
 export default {
-  el: ".bv-example-row",
-
+  auth:AUTH,
   data() {
     return {
-      form: {
-        userLastName: "",
-        userFirstName: "",
-        userEmail: "",
-        initialPassword: "",
-        confirmedPassword: "",
-      },
-      show: true
+      username: "",
+      email: "",
+      password: "",
+      confirmedPassword: ""
+    }
+  },
+  methods: {
+    submit: function(e){
+      e.preventDefault();
+      sessionStorage.setItem("username: ", this.username),
+      sessionStorage.setItem("Email: ", this.email),
+      sessionStorage.setItem("Password", this.password),
+      AUTH.register(this.email,this.password)
     }
   },
 }

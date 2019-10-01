@@ -15,6 +15,41 @@ export default{
         meta : {
             tokenRequired : false
         }
-    }
-]
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: resolve => require(['modules/basic/Dashboard.vue'], resolve),
+        meta: {
+            tokenRequired: true
+        },
+    },
+    {
+        path: '/subjects',
+        name: 'subjects',
+        component: resolve => require(['modules/basic/Subjects.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+    },
+    {
+        path: '/personalInfo',
+        name: 'personalInfo',
+        component: resolve => require(['modules/basic/PersonalInfo.vue'], resolve),
+        meta: {
+            tokenRequired: false
+    },
+    // {
+    //     path: '/Logout',
+    //     name: 'Logout',
+    //     component: resolve => require(['modules/Logout.vue'], resolve),
+    //     meta: {
+    //         tokenRequired: false
+    //     },
+    }]
 }
+
+
+
+
+
