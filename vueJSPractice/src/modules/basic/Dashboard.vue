@@ -1,6 +1,5 @@
 <template>
   <div>
-  <Sidebar></Sidebar>
     <div class="jumbotron">
       <h1>Dashboard</h1>
     </div>
@@ -11,7 +10,7 @@
           <b-row no-gutters>
             <b-card-body>
               <h1>HI {{username}}</h1>
-              <h3>Kalpana Dashboard</h3>
+              <h3>Welcome to Dashboard!</h3>
             </b-card-body>
           </b-row>
         </center>
