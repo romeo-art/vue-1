@@ -20,8 +20,10 @@ export default {
             if (this.registeredUser[i].email === email && this.registeredUser[i].password === password) {
                 ROUTER.push('/dashboard')
                 return this.registeredUser[i]
-
+                
             }
+            
+          
         }
         return null
     },

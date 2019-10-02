@@ -90,7 +90,7 @@ export default {
       this.infos.time = ""
       this.infos.day= ""
       this.infos.room = ""
-    }
+    },
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-<sidebar-menu :menu="menu" />
+<sidebar-menu :menu="menu" id="mysidebar"/>
 </template>
 <script>
 export default {
@@ -8,7 +8,7 @@ return {
 menu: [
 {
 header: true,
-title: 'KAT-ON PAGE',
+title: 'header',
 hiddenOnCollapse: true
 },
 {
@@ -25,9 +25,20 @@ icon: 'fa fa-calendar-plus'
 href: '/login',
 title: 'Logout',
 icon: 'fa fa-exclamation-circle',
+},
+{
+href: '/subjects',
+title: 'Delete Course and Subjects', 
+icon: 'fa fa-calendar-plus'
 }
 ]
 }
 }
 }
 </script> 
+<style scoped>
+    #mysidebar{
+        position: fixed;
+    }
+
+</style>

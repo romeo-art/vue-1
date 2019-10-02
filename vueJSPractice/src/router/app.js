@@ -5,7 +5,7 @@ export default{
         name: 'login',
         component : resolve =>require(['modules/basic/Login.vue'], resolve),
         meta : {
-            tokenRequired : false
+            tokenRequired : true
         }
     },
     {
@@ -38,7 +38,16 @@ export default{
         component: resolve => require(['modules/basic/PersonalInfo.vue'], resolve),
         meta: {
             tokenRequired: false
+        }
     },
+    // {
+    //     path: '/sidebar',
+    //     name: 'sidebar',
+    //     component: resolve => require(['modules/basic/Sidebar.vue'], resolve),
+    //     meta: {
+    //         tokenRequired: false
+    //     }
+    // }
     // {
     //     path: '/Logout',
     //     name: 'Logout',
@@ -46,7 +55,7 @@ export default{
     //     meta: {
     //         tokenRequired: false
     //     },
-    }]
+    ]
 }
 
 

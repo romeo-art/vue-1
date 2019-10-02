@@ -13,7 +13,7 @@
     <input v-model="password" type="password" class="form-control" id="password" placeholder="Password">
   </div>
 
-  <center><button type="submit" class="btn btn-primary" @click="test()">Login</button></center>
+  <center><button type="submit" class="btn btn-primary" @click="submit">Login</button></center>
 </form>
 
 </div>
@@ -49,18 +49,21 @@ export default {
     //     console.log(response)
     //   }
     // };
-    test(){
-      let link = 'http://localhost:3000'
-      jquery.ajax({
-        url: link,
-        method: 'POST',
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }
-      }).then(response => {
-        alert(response.username)
-      })
-    },
+
+
+
+    // test(){
+    //   let link = 'http://localhost:3000'
+    //   jquery.ajax({
+    //     url: link,
+    //     method: 'POST',
+    //     headers: {
+    //       'Access-Control-Allow-Origin': '*'
+    //     }
+    //   }).then(response => {
+    //     alert(response.username)
+    //   })
+    // },
   }
 }
 

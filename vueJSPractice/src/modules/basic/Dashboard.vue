@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="dashboard">
     <div class="jumbotron">
       <h1>Dashboard</h1>
     </div>
@@ -10,7 +10,8 @@
           <b-row no-gutters>
             <b-card-body>
               <h1>HI {{username}}</h1>
-              <h3>Welcome to Dashboard!</h3>
+              <h3>Welcome to</h3>
+              <h2>My University School of God</h2>
             </b-card-body>
           </b-row>
         </center>
@@ -30,6 +31,9 @@
 #image {
   width: 250px;
   height: 220px;
+}
+#dashboard{
+  margin-left: 145px;
 }
 </style>
 

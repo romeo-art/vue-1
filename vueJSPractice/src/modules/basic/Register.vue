@@ -47,8 +47,8 @@ export default {
   methods: {
     submit: function(e){
       e.preventDefault();
-      sessionStorage.setItem("username: ", this.username),
-      sessionStorage.setItem("Email: ", this.email),
+      sessionStorage.setItem("username", this.username),
+      sessionStorage.setItem("Email", this.email),
       sessionStorage.setItem("Password", this.password),
       AUTH.register(this.email,this.password)
     }
